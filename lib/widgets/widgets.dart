@@ -1,1 +1,1 @@
-export 'package:peliculas/widgets/card_swiper.dart';
+export 'package:peliculas/widgets/cards_swiper.dart';
