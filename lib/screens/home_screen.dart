@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import  'package:flutter/material.dart';
 import 'package:peliculas/widgets/widgets.dart';
 
@@ -19,12 +21,11 @@ class HomeScreen extends StatelessWidget {
     body: SingleChildScrollView(
       child: Column(
       children: [
-
-        //tarjetas principales
         cardsSwiper(),
-
-        //slider de peliculas
-         // ignore: prefer_const_constructors
+        
+         MovieSlider(),
+         MovieSlider(),
+         MovieSlider(),
          MovieSlider(),
       ],
     ),

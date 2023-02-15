@@ -8,9 +8,8 @@ class MovieSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      height: 260,
       width: double.infinity,
-      color: Colors.green,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         // ignore: prefer_const_literals_to_create_immutables, duplicate_ignore
@@ -21,7 +20,10 @@ class MovieSlider extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child:  Text('Populares', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
           ),
-            Expanded(
+
+          SizedBox(height: 5),
+
+          Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 20,
@@ -41,8 +43,34 @@ class _MoviePoster extends StatelessWidget {
     return Container(
       width: 130,
       height: 190,
-      color: Colors.blue,
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context,'details', arguments: 'movie-instance'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: FadeInImage(
+                placeholder: AssetImage('assets/charmander.jpeg'),
+                 image: NetworkImage('https://via.placeholder.com/300x400'),
+                 width: 130,
+                 height: 190,
+                 fit: BoxFit.cover,
+              ),
+            ),
+          ),
+
+          SizedBox(height: 5),
+
+          Text(
+            'El retorno del jedi silvestre de monte cristo',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+          )
+        ],
+      ),
     );
   }
 }
